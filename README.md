@@ -1,5 +1,4 @@
-# Meteo
-Creation d'une app météo
+# Application Meteo
 
 ### Outils
 
