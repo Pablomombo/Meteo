@@ -25,7 +25,7 @@ https://pablomombo.github.io/Meteo/
 Pablo Mombo et Ilaria Fantini au sein de la formation  be<\code>, Bruxelles 2/5 avrile 2019
 
 Pablo Mombo: Vuejs, Javascript, API, CSS, Bootstrap
-Ilaria Fantini: Vuejs, Javascript, API, mockup
+Ilaria Fantini: Vuejs, Javascript, API, maquette
 
 ![Screenshot](appmeteo.pdf)
 
