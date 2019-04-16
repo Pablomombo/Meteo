@@ -27,5 +27,7 @@ Pablo Mombo et Ilaria Fantini au sein de la formation  be<\code>, Bruxelles 2/5 
 - Pablo Mombo: Vuejs, Javascript, API, CSS, Bootstrap
 - Ilaria Fantini: Vuejs, Javascript, API, maquette
 
+### Screenshot
+
 ![Screenshot](appmeteo.pdf)
 
