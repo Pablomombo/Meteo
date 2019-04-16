@@ -15,7 +15,7 @@ Réaliser une application météo grâce à Figma, VueJS et l'API openweathermap
 
 ### Etat du projet
 
-En cours
+Site fonctionnel mais on arrive pas a faire apparaitre les images de l'API
 
 ### URL Demo
 
