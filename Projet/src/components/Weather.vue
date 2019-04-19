@@ -62,11 +62,17 @@
                         <div class="offset-1 col-md-10">
                             <div class="week" style="text-align: center;">
                                 <div v-for="(x, index) in listForecast" v-if="index %8===0" :key="x.id">
-                                    <h4>{{ date }}</h4>
-                                    <div><img v-bind:src= "'http://openweathermap.org/img/w/' + x.weather[0].icon + '.png'"></div>
-                                    <div>
-                                        <p>max: <span>{{ x.main.temp_max }}</span></p>
-                                        <p>min: <span>{{ x.main.temp_min }}</span></p>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <h4>{{ date }}</h4>
+                                        </div>    
+                                        <div class="col-4">
+                                            <img v-bind:src= "'http://openweathermap.org/img/w/' + x.weather[0].icon + '.png'">
+                                        </div>
+                                        <div class="col-4">
+                                          <p><span>max: {{ x.main.temp_max }}</span></p>
+                                          <p><span>min: {{ x.main.temp_min }}</span></p>   
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -118,6 +124,8 @@ export default {
                         console.log(this.date);
                     }
                     this.listForecast = response.data.list;
+                    this.icon = "'../src/assets/img/' + list[0].weather[0].icon + '.png'";
+                    console.log(this.icon);
                 })
         },
     }
@@ -148,6 +156,16 @@ span {
     font-size: 18px;
     margin-bottom: 16px;
 }
+.wrapper{
+    width: 500px;
+}
+.first{
+    width: 250px;
+}
+.second{
+    width:250px;
+}
+
 /*.row {
     border: 2px red solid;
 }
