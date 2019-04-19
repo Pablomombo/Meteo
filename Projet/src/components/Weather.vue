@@ -16,7 +16,7 @@
                         <div class="offset-1 col-md-10 mb-4">
                             <div class="today" style="text-align: center;">
                                 <div v-for="(y, index) in listForecast" v-if="index %40===0" :key="y.id">
-                                    <div><img v-bind:src= "'http://openweathermap.org/img/w/' + y.weather[0].icon"></div>
+                                    <div><img v-bind:src= "'http://openweathermap.org/img/w/' + y.weather[0].icon + '.png'" style="width:200px;height:200px;"></div>
                                     <div>
                                         <p><span>Temp now: {{ y.main.temp }}</span></p>
                                         <p><span>{{ y.weather[0].description }}</span></p>
@@ -35,7 +35,7 @@
                         <div class="col-1 col-md-1 mr-3" v-for="(p, index) in listForecast" v-if="index <8" :key="p.id">
                             <div class="day" style="text-align: center;">
                                 <div>{{ p.dt_txt }}</div>
-                                <div><img v-bind:src= "'http://openweathermap.org/img/w/' + p.weather[0].icon"></div>
+                                <div><img v-bind:src= "'http://openweathermap.org/img/w/' + p.weather[0].icon + '.png'"></div>
                                 <div>
                                     <p><span>max: {{ p.main.temp_max }}</span></p>
                                     <p><span>min: {{ p.main.temp_min }}</span></p>
@@ -50,12 +50,22 @@
                         <div class="offset-1 col-md-10">
                             <div class="week" style="text-align: center;">
                                 <div v-for="(x, index) in listForecast" v-if="index %8===0" :key="x.id">
-                                    <h4>{{ date }}</h4>
-                                    <div><img v-bind:src= "'http://openweathermap.org/img/w/' + x.weather[0].icon"></div>
-                                    <div>
-                                        <p><span>max: {{ x.main.temp_max }}</span></p>
-                                        <p><span>min: {{ x.main.temp_min }}</span></p>
-                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-4">
+                                            <h4>{{ date }}</h4>
+                                        </div>    
+                                        <div class="col-4">
+                                            
+                                            <img v-bind:src= "'http://openweathermap.org/img/w/' + x.weather[0].icon + '.png'">
+                                        </div>
+                                        <div class="col-4">
+                                          <p><span>max: {{ x.main.temp_max }}</span></p>
+                                          <p><span>min: {{ x.main.temp_min }}</span></p>   
+                                        </div>
+
+                                    </div>    
+
                                 </div>
                             </div>
                         </div>
@@ -78,6 +88,7 @@ export default {
             date: '',
             todayDate: '',
             listForecast: '',
+            icon:'',
             listForecastOneDay: ''
         }
     },
@@ -99,6 +110,8 @@ export default {
                         console.log(this.date);
                     }  
                     this.listForecast = response.data.list;
+                    this.icon = "'../src/assets/img/' + list[0].weather[0].icon + '.png'";
+                    console.log(this.icon);
                 })
         },
     }
@@ -125,6 +138,16 @@ body {
     font-size: 18px;
     margin-bottom: 16px;
 }
+.wrapper{
+    width: 500px;
+}
+.first{
+    width: 250px;
+}
+.second{
+    width:250px;
+}
+
 /*.row {
     border: 2px red solid;
 }
